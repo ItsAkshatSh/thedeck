@@ -29,6 +29,10 @@ class State:
         self.playing = False
         self.media_dirty = False
         
+        self.bg_color = 0x000000
+        self.dynamic_bg = False
+        
+        
         #Pomodoro
         self.pomo_phase = POMO_IDLE
         self.pomo_session = 0

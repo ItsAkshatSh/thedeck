@@ -31,6 +31,15 @@ class SerialHandler:
             s.playing = parts[4].strip() == "1"
         s.media_dirty = True
         
+        if len(parts) >= 6:
+            hex_str = parts[5].strip()
+            if len(hex_str) == 6:
+                try:
+                    s.bg_color = int(hex_str, 16)
+                except ValueError:
+                    s.bg_color = 0x000000
+        s.media_dirty = True
+        
         
     async def run(self):
         while True:

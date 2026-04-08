@@ -25,6 +25,8 @@ class TouchHandler:
         
         self.swipe_event = SWIPE_NONE
         
+        self.tap_event = None
+        
         self._touching = False
         self._start_x = 0
         self._start_y = 0
@@ -50,19 +52,18 @@ class TouchHandler:
                     self._current_x = x
                     self._current_y = y
                     
-                else:
-                    if self._touching:
-                        self._touching = False
-                        elapsed = time.monotonic() - self._start_time
-                        
-                        if elapsed < 0.05:
-                            continue
-                        
-                        dx = self._current_x - self._start_x
-                        dy = self._current_y - self._start_y
-                        
-                        if abs(dx) >= SWIPE_MIN_DIST and abs(dy) <= SWIPE_MAX_VERT:
-                            self.swipe_event = (SWIPE_LEFT if dx < 0 else SWIPE_RIGHT)
+                elif self._touching:
+                    self._touching = False
+                    elapsed = time.monotonic() - self._start_time
+                    
+                    dx = self._current_x - self._start_x
+                    dy = self._current_y - self._start_y
+                    
+                    #touch or swipe check
+                    if abs(dx) >= SWIPE_MIN_DIST and abs(dy) <= SWIPE_MAX_VERT and elapsed >= 0.05:
+                        self.swipe_event = SWIPE_LEFT if dx < 0 else SWIPE_RIGHT
+                    elif abs(dx) < 20 and abs(dy) < 20 and elapsed < 0.5:
+                        self.tap_event = (self._start_x, self._start_y)
                             
                             
                 

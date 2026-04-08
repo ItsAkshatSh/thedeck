@@ -14,7 +14,9 @@ class NowPlayingScreen:
         large = bitmap_font.load_font(C.FONT_LARGE)
         
         self.group = displayio.Group()
-        self.group.append(Rect(0,0, C.SCREEN_W, C.SCREEN_H, fill = C.BG))
+        
+        self._bg = Rect(0,0, C.SCREEN_W, C.SCREEN_H, fill = C.BG)
+        self.group.append(_bg)
         
         lbl = Label(small, text="Now Playing", fill=C.TEXT3, x=14, y=14)
         
@@ -115,6 +117,12 @@ class NowPlayingScreen:
         self._t_tot.x = C.SCREEN_W - self._t_tot.bounding_box[2] - 14
         self._prog_bar.set_pct(state.progress_pct, animate=True)
         self.update_play_state(state.playing)
+        
+    def update_bg(self, state):
+        target = state.bg_color if state.dynamic_bg else C.BG
+        if target != self._last_bg:
+            self._last_bg = target
+            self._bg.fill = target
         
     def update_play_state(self, playing):
         self._dot.fill = C.ACCENT2 if playing else C.TEXT3
