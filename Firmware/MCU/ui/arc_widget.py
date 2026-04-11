@@ -1,4 +1,3 @@
-import math
 import displayio
 from ui.animator import AnimatedValue
 from adafruit_display_shapes.arc import Arc
@@ -21,8 +20,23 @@ class ArcWidget:
         self.group.append(Arc(x=self._cx, y=self._cy, radius=self._r, angle=360, direction=0, segments=60, stroke=self._t, arc_color=self._bg, arc_inner_color=0x000000))
         
         angle = max(1, int(pct * 360))
-        self.group.append(Arc(x=self._cx, y=self._cy, radius=self._r, angle=angle, direction=270, segments=max(4, angle // 6), stroke=self._t, arc_color=self._bg, arc_inner_color=0x000000))
-    
+        self.group.append(
+            Arc(
+                x=self._cx,
+                y=self._cy,
+                radius=self._r,
+                angle=angle,
+                direction=270,
+                segments=max(4, angle // 6),
+                stroke=self._t,
+                arc_color=self._fill_color,
+                arc_inner_color=0x000000,
+            )
+        )
+
+    def set_color(self, color):
+        self._fill_color = color
+
     def set_pct(self, pct, animate=True, duration=0.5):
         pct = max(0.0, min(1.0, pct))
         if animate:
@@ -33,13 +47,12 @@ class ArcWidget:
     def step(self, dt):
         self._anim.step(dt)
         v = self._anim.value
-        if abs(v - self._lsat_pct) < 0.004 and self._fill_color == self._last_color:
+        if abs(v - self._last_pct) < 0.004 and self._fill_color == self._last_color:
             return
         self._last_pct = v
         self._last_color = self._fill_color
         self._rebuild(v)
-        
-        @property
-        def done(self):
-            return self._anim.done
-        
+
+    @property
+    def done(self):
+        return self._anim.done
