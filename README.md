@@ -90,4 +90,9 @@ The firmware is completely written in Python using CircuitPython libraries
 
 I too use a bridge for grabbing Now playing info using winSDK, you can find it under [/Firmware](https://github.com/ItsAkshatSh/thedeck/tree/main/Firmware/MusicBridge), it sends the info through ports, and then `serial_handler.py` parses it and passes that info to the screens!
 
+## BOM
+
+Check it out [here!](https://github.com/ItsAkshatSh/thedeck/blob/main/BOM.csv)
+
+
 # THANK YOU HACKCLUB! ❤️
