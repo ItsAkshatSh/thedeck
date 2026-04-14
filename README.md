@@ -30,7 +30,7 @@ I’ve always wanted a macro pad that felt more dynamic and customizable than th
 </div>
 
 ## Hardware
-head to [/Hardware](https://github.com/ItsAkshatSh/thedeck/tree/main/Hardware)
+want to work on this? head  to [/Hardware/Source](https://github.com/ItsAkshatSh/thedeck/tree/main/Hardware/Source)
 ### Schematic
 <div align="center">
 <img width="60%" height="60%" alt="image" src="https://github.com/user-attachments/assets/be9427a6-514d-4814-952f-8de7264cecc9" />
