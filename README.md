@@ -31,6 +31,21 @@ I’ve always wanted a macro pad that felt more dynamic and customizable than th
 
 ## Hardware
 want to work on this? head  to [/Hardware/Source](https://github.com/ItsAkshatSh/thedeck/tree/main/Hardware/Source)
+
+- Refer to [BOM](https://github.com/ItsAkshatSh/thedeck/blob/main/BOM.csv)
+- Download the PCB files from [/Hardware](https://github.com/ItsAkshatSh/thedeck/tree/main/Hardware)
+- Order using the provided Gerber files
+- Solder all components as per the schematic
+- Download CircuitPython for XIAO RP2040
+- Hold the BOOT button and plug in the board
+- Drag and drop the .uf2 file onto the device
+- It should appear as a CIRCUITPY drive
+- Go [here](https://github.com/ItsAkshatSh/thedeck/tree/main/Firmware/MCU)
+- Copy all files into the CIRCUITPY drive
+- For “Now Playing” support, go [here](https://github.com/ItsAkshatSh/thedeck/tree/main/Firmware/MusicBridge)
+- download and run
+- and, you are done!
+
 ### Schematic
 <div align="center">
 <img width="60%" height="60%" alt="image" src="https://github.com/user-attachments/assets/be9427a6-514d-4814-952f-8de7264cecc9" />
