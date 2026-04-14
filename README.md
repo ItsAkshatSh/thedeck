@@ -16,7 +16,7 @@
 The Deck runs on a Seeed Studio XIAO RP2040, which powers a 2.8 inch resistive screen from Adafruit, A rotary Encoder, and Two cherry mx switches, it also uses a MCP23017 for extra pins! It's quite similar to a StreamDeck, but instead of a grid of buttons that launch apps, it includes a screen that show-cases different screens with different functions. Want to make this yours? Head out to [/Hardware](https://github.com/ItsAkshatSh/thedeck/tree/main/Hardware), and Have a look at the schematic, and make your own preferred PCB style! 
 
 ### why?
-I’ve always wanted a macro pad that felt more dynamic and customizable than the usual grid of buttons — something I would genuinely love to use every day. The Deck was built to do exactly that. Instead of relying on fixed keys like most designs, it uses a touchscreen to create a flexible, ever-changing interface
+I’ve always wanted a macro pad that felt more dynamic and customizable than the usual grid of buttons something I would genuinely love to use every day. The Deck was built to do exactly that. Instead of relying on fixed keys like most designs, it uses a touchscreen to create a flexible, ever-changing interface
 
 ## Parts!!!
 - It uses a _**Seeed Studio XIAO RP2040**_, Pretty budget friendly microcontroller
@@ -97,5 +97,8 @@ I too use a bridge for grabbing Now playing info using winSDK, you can find it u
 
 Check it out [here!](https://github.com/ItsAkshatSh/thedeck/blob/main/BOM.csv)
 
+## Zine
+
+<img src="https://github.com/ItsAkshatSh/thedeck/blob/main/ZINEDeck.png?raw=true" width=600 height=1000>
 
 # THANK YOU HACKCLUB! ❤️
